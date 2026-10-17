@@ -1,173 +1,1522 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090914">
-  <meta name="description" content="UndefinedVerse is an original fictional universe featuring original anime concepts, characters, stories, manga, and novels.">
-  <title>UndefinedVerse — Beyond Imagination</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: #090914;
-      color: #f5f5ff;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-      padding: 20px 7%;
-      border-bottom: 1px solid #292944;
-      background: #0c0c1b;
-    }
-    .logo { font-size: 23px; font-weight: 800; letter-spacing: 1px; }
-    .logo span { color: #a78bfa; }
-    nav { display: flex; gap: 20px; flex-wrap: wrap; }
-    nav a { color: #c7c7df; font-size: 14px; }
-    nav a:hover { color: #a78bfa; }
-    .hero {
-      min-height: 470px;
-      padding: 100px 8%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background: radial-gradient(ellipse at 80% 20%, #39236c 0%, #17132f 35%, #090914 75%);
-    }
-    .tag {
-      color: #c4b5fd;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 12px;
-      font-weight: bold;
-    }
-    h1 { font-size: clamp(42px, 8vw, 76px); line-height: 1.08; margin: 18px 0; }
-    h1 span { color: #a78bfa; }
-    .hero p { max-width: 600px; color: #c7c7df; font-size: 17px; }
-    .button {
-      display: inline-block;
-      margin-top: 28px;
-      padding: 12px 22px;
-      border-radius: 7px;
-      background: #8b5cf6;
-      color: white;
-      font-weight: bold;
-      width: fit-content;
-    }
-    .button:hover { background: #7c3aed; }
-    section { padding: 65px 8%; }
-    .section-heading { font-size: 30px; margin-bottom: 10px; }
-    .section-intro { color: #aaaac7; margin-bottom: 28px; max-width: 650px; }
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
-    .card {
-      background: #121226;
-      border: 1px solid #292944;
-      border-radius: 12px;
-      padding: 24px;
-      min-height: 180px;
-    }
-    .card .symbol { font-size: 28px; margin-bottom: 12px; }
-    .card h3 { margin-bottom: 8px; }
-    .card p { color: #aaaac7; font-size: 14px; }
-    .universe { background: #0e0e1d; }
-    .notice {
-      padding: 28px;
-      background: linear-gradient(120deg, #211743, #121226);
-      border: 1px solid #39305d;
-      border-radius: 12px;
-    }
-    footer {
-      padding: 28px 8%;
-      border-top: 1px solid #292944;
-      color: #aaaac7;
-      font-size: 13px;
-      text-align: center;
-    }
-    @media (max-width: 600px) {
-      header { align-items: flex-start; flex-direction: column; }
-      nav { gap: 14px; }
-      .hero { padding-top: 75px; padding-bottom: 75px; }
-      section { padding: 48px 6%; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08070d">
+<meta name="description" content="Enter UndefinedVerse — an original anime universe of extraordinary characters, impossible worlds, and stories beyond imagination.">
+<title>UndefinedVerse — Beyond the Unknown</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #08070d;
+  --panel: #100e19;
+  --purple: #9b72ff;
+  --violet: #6e42d9;
+  --silver: #e8e4f2;
+  --muted: #9993aa;
+  --line: rgba(210, 194, 255, .13);
+  --glow: rgba(137, 86, 255, .2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--silver);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 15% 15%, rgba(93, 47, 171, .15), transparent 38%),
+    radial-gradient(ellipse at 85% 45%, rgba(53, 46, 121, .12), transparent 35%),
+    radial-gradient(ellipse at 50% 100%, rgba(102, 40, 145, .12), transparent 40%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  background: #8b5cf6;
+  color: white;
+}
+
+/* Ambient atmosphere */
+
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: .16;
+  animation: drift 14s ease-in-out infinite alternate;
+}
+
+.orb.one {
+  background: #803cff;
+  top: 15%;
+  left: -250px;
+}
+
+.orb.two {
+  background: #4234a5;
+  right: -260px;
+  top: 45%;
+  animation-delay: -7s;
+}
+
+@keyframes drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(100px, 70px, 0) scale(1.2); }
+}
+
+#stars {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .65;
+}
+
+/* Navigation */
+
+.nav-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 15px 5%;
+  background: rgba(8, 7, 13, .78);
+  border-bottom: 1px solid rgba(255, 255, 255, .06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+nav {
+  max-width: 1400px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: -.8px;
+  font-size: 19px;
+  white-space: nowrap;
+}
+
+.brand-mark {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  border: 1px solid rgba(185, 152, 255, .65);
+  border-radius: 11px;
+  background: linear-gradient(145deg, #211638, #0c0a12);
+  color: #d6c1ff;
+  box-shadow: 0 0 24px rgba(139, 92, 246, .16);
+  transform: rotate(-7deg);
+}
+
+.brand-mark span {
+  transform: rotate(7deg);
+  font-size: 22px;
+}
+
+.brand em {
+  color: #a98aff;
+  font-style: normal;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  font-size: 12px;
+  color: #b8b1c7;
+  transition: color .25s;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+.nav-cta {
+  border: 1px solid rgba(174, 139, 255, .45);
+  padding: 10px 17px;
+  border-radius: 8px;
+  color: white;
+  font-size: 12px;
+  transition: .25s;
+}
+
+.nav-cta:hover {
+  background: rgba(139, 92, 246, .17);
+  box-shadow: 0 0 25px var(--glow);
+}
+
+/* Hero */
+
+.hero {
+  max-width: 1400px;
+  min-height: 690px;
+  margin: auto;
+  padding: 110px 7% 95px;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 45px;
+  position: relative;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #c0a8ff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: #a98aff;
+}
+
+.hero h1 {
+  margin-top: 28px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(55px, 7.1vw, 102px);
+  line-height: .98;
+  letter-spacing: -7px;
+  font-weight: 600;
+}
+
+.hero h1 .line {
+  display: block;
+}
+
+.gradient-text {
+  background: linear-gradient(110deg, #fff 5%, #c9b3ff 45%, #8a62e9 75%, #e2d7ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-copy {
+  max-width: 470px;
+  margin-top: 25px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.95;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 34px;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+  padding: 14px 20px;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: transform .25s, box-shadow .25s, background .25s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-primary {
+  color: #fff;
+  background: linear-gradient(110deg, #8b5cf6, #6937c8);
+  box-shadow: 0 8px 30px rgba(117, 66, 226, .22);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 10px 38px rgba(117, 66, 226, .4);
+}
+
+.btn-secondary {
+  border: 1px solid var(--line);
+  color: #e5def3;
+  background: rgba(255, 255, 255, .025);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, .07);
+}
+
+.hero-meta {
+  margin-top: 48px;
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.meta-item strong {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.meta-item span {
+  color: #827b92;
+  font-size: 10px;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+
+/* CSS-created dimensional core */
+
+.universe-art {
+  min-height: 460px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  isolation: isolate;
+}
+
+.universe-art::before {
+  content: "";
+  position: absolute;
+  width: 310px;
+  height: 310px;
+  border-radius: 50%;
+  background: #6432d4;
+  opacity: .15;
+  filter: blur(75px);
+}
+
+.ring {
+  position: absolute;
+  border: 1px solid rgba(193, 164, 255, .35);
+  border-radius: 50%;
+  transform: rotate(-25deg);
+}
+
+.ring.r1 {
+  width: 340px;
+  height: 155px;
+  animation: orbit 17s linear infinite;
+}
+
+.ring.r2 {
+  width: 340px;
+  height: 155px;
+  transform: rotate(60deg);
+  border-color: rgba(151, 117, 255, .32);
+  animation: orbit 23s linear infinite reverse;
+}
+
+.ring.r3 {
+  width: 260px;
+  height: 260px;
+  border-style: dashed;
+  border-color: rgba(221, 208, 255, .18);
+  animation: orbit 45s linear infinite;
+}
+
+@keyframes orbit {
+  to { rotate: 360deg; }
+}
+
+.core {
+  width: 190px;
+  height: 190px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 27%, #9f79f3 0%, #5732a4 13%, #24133f 37%, #0b0914 68%);
+  box-shadow:
+    0 0 35px rgba(126, 72, 232, .4),
+    0 0 100px rgba(111, 59, 222, .22),
+    inset 0 0 35px rgba(0, 0, 0, .8);
+  animation: corePulse 5s ease-in-out infinite alternate;
+}
+
+.core::before {
+  content: "";
+  position: absolute;
+  inset: -11px;
+  border-radius: 50%;
+  border: 1px solid rgba(206, 187, 255, .32);
+  box-shadow: 0 0 22px rgba(155, 114, 255, .13);
+}
+
+.core::after {
+  content: "U";
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 100px;
+  font-weight: 400;
+  color: rgba(235, 225, 255, .9);
+  text-shadow: 0 0 35px rgba(183, 147, 255, .75);
+}
+
+@keyframes corePulse {
+  from { transform: scale(.97); filter: brightness(.88); }
+  to { transform: scale(1.04); filter: brightness(1.15); }
+}
+
+.art-label {
+  position: absolute;
+  padding: 12px 15px;
+  border: 1px solid rgba(209, 192, 255, .15);
+  border-radius: 10px;
+  background: rgba(14, 11, 24, .78);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .25);
+}
+
+.art-label small {
+  display: block;
+  color: #9187a8;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.art-label strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.label-top {
+  top: 48px;
+  right: 2%;
+}
+
+.label-bottom {
+  bottom: 45px;
+  left: 1%;
+}
+
+.art-coordinate {
+  position: absolute;
+  right: 1%;
+  bottom: 0;
+  font-size: 9px;
+  color: #777087;
+  letter-spacing: 2px;
+}
+
+/* Moving announcement */
+
+.ticker {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, .018);
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 35s linear infinite;
+}
+
+.ticker-content {
+  padding: 17px 0;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  white-space: nowrap;
+  color: #a69cb9;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.ticker-content span {
+  color: #a17aff;
+  font-size: 16px;
+}
+
+@keyframes ticker {
+  to { transform: translateX(-50%); }
+}
+
+/* General sections */
+
+.section {
+  max-width: 1400px;
+  margin: auto;
+  padding: 115px 7%;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 42px;
+}
+
+.section-kicker {
+  color: #a88aff;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.section-heading h2 {
+  margin-top: 12px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(32px, 4vw, 53px);
+  line-height: 1.12;
+  letter-spacing: -2px;
+  font-weight: 500;
+}
+
+.section-heading p {
+  max-width: 340px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.text-link {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: #c9b6ff;
+  font-size: 11px;
+  white-space: nowrap;
+  transition: gap .25s;
+}
+
+.text-link:hover {
+  gap: 14px;
+}
+
+/* Featured universe card */
+
+.feature-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 370px;
+  padding: 48px;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(187, 157, 255, .19);
+  border-radius: 18px;
+  background:
+    radial-gradient(ellipse at 78% 45%, rgba(109, 62, 196, .27), transparent 35%),
+    radial-gradient(ellipse at 90% 100%, rgba(58, 35, 106, .3), transparent 45%),
+    linear-gradient(120deg, #15101f, #0c0a12 65%);
+  transition: border-color .3s, transform .3s;
+}
+
+.feature-card:hover {
+  border-color: rgba(187, 157, 255, .4);
+  transform: translateY(-3px);
+}
+
+.feature-card::after {
+  content: "";
+  position: absolute;
+  right: -90px;
+  top: -180px;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  border: 1px solid rgba(188, 162, 255, .22);
+  box-shadow:
+    0 0 0 25px rgba(155, 114, 255, .025),
+    0 0 0 60px rgba(155, 114, 255, .025),
+    0 0 0 100px rgba(155, 114, 255, .02);
+  pointer-events: none;
+}
+
+.feature-content {
+  max-width: 510px;
+  position: relative;
+  z-index: 1;
+}
+
+.pill {
+  display: inline-flex;
+  padding: 7px 11px;
+  border: 1px solid rgba(171, 138, 255, .26);
+  border-radius: 100px;
+  color: #c3aaff;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1.7px;
+}
+
+.feature-content h3 {
+  margin-top: 20px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(31px, 4vw, 48px);
+  letter-spacing: -2px;
+  line-height: 1.1;
+}
+
+.feature-content p {
+  margin-top: 15px;
+  max-width: 400px;
+  color: #a49bb5;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.feature-content .btn {
+  margin-top: 24px;
+}
+
+/* Universe collection */
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.collection-card {
+  min-height: 270px;
+  position: relative;
+  overflow: hidden;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: linear-gradient(145deg, rgba(29, 22, 44, .8), rgba(12, 10, 18, .96));
+  transition: transform .3s, border-color .3s, box-shadow .3s;
+}
+
+.collection-card::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  right: -85px;
+  top: -85px;
+  border-radius: 50%;
+  background: var(--card-glow, #8b5cf6);
+  opacity: .12;
+  filter: blur(45px);
+  transition: opacity .3s, transform .3s;
+}
+
+.collection-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(182, 150, 255, .4);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, .18);
+}
+
+.collection-card:hover::before {
+  opacity: .28;
+  transform: scale(1.4);
+}
+
+.collection-card:nth-child(2) { --card-glow: #3c85ff; }
+.collection-card:nth-child(3) { --card-glow: #e054b7; }
+.collection-card:nth-child(4) { --card-glow: #35c7b4; }
+.collection-card:nth-child(5) { --card-glow: #d69a4c; }
+.collection-card:nth-child(6) { --card-glow: #9b72ff; }
+
+.card-top, .card-bottom {
+  position: relative;
+  z-index: 1;
+}
+
+.card-index {
+  color: #756b89;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.card-symbol {
+  width: 53px;
+  height: 53px;
+  margin-top: 25px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  border: 1px solid rgba(194, 172, 255, .2);
+  background: rgba(147, 104, 245, .08);
+  color: #cbb5ff;
+  font-size: 25px;
+}
+
+.collection-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: -.5px;
+}
+
+.collection-card p {
+  margin-top: 7px;
+  color: #948ba5;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.card-arrow {
+  position: absolute;
+  right: 0;
+  bottom: 5px;
+  color: #b9a2f5;
+  font-size: 20px;
+  transition: transform .25s;
+}
+
+.collection-card:hover .card-arrow {
+  transform: translate(4px, -4px);
+}
+
+/* Philosophy */
+
+.manifesto {
+  position: relative;
+  overflow: hidden;
+  padding: 95px 7%;
+  text-align: center;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(98, 55, 183, .16), transparent 65%),
+    rgba(255, 255, 255, .012);
+}
+
+.manifesto .section-kicker {
+  display: block;
+}
+
+.manifesto h2 {
+  max-width: 850px;
+  margin: 24px auto 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(32px, 5vw, 62px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -2.7px;
+}
+
+.manifesto h2 span {
+  color: #a88aff;
+}
+
+.manifesto p {
+  max-width: 560px;
+  margin: 22px auto 0;
+  color: #a39aaf;
+  font-size: 12px;
+  line-height: 2;
+}
+
+/* Creator section */
+
+.creator-panel {
+  padding: 36px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(120deg, rgba(30, 22, 46, .6), rgba(12, 10, 17, .8));
+}
+
+.creator-panel h3 {
+  margin-top: 12px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 31px;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+.creator-panel p {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.95;
+}
+
+.creator-side {
+  min-height: 175px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border-radius: 12px;
+  background:
+    radial-gradient(ellipse at center, rgba(119, 74, 206, .18), transparent 68%),
+    rgba(255, 255, 255, .015);
+  border: 1px solid rgba(195, 171, 255, .1);
+}
+
+.creator-side strong {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 25px;
+  letter-spacing: 3px;
+}
+
+.creator-side span {
+  display: block;
+  margin-top: 7px;
+  color: #a88aff;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* Footer */
+
+footer {
+  padding: 40px 7% 25px;
+  border-top: 1px solid var(--line);
+}
+
+.footer-main {
+  max-width: 1400px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.footer-note {
+  max-width: 360px;
+  color: #8e859d;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.footer-links a {
+  color: #aaa1b9;
+  font-size: 11px;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 30px auto 0;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  border-top: 1px solid rgba(255, 255, 255, .06);
+  color: #716a7e;
+  font-size: 10px;
+}
+
+/* Entrance animations */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-copy, .hero h1, .hero .eyebrow, .hero-actions, .hero-meta {
+  animation: enter .8s both;
+}
+
+.hero h1 { animation-delay: .08s; }
+.hero-copy { animation-delay: .17s; }
+.hero-actions { animation-delay: .24s; }
+.hero-meta { animation-delay: .32s; }
+
+@keyframes enter {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile navigation and responsive layout */
+
+.menu-toggle {
+  display: none;
+  color: white;
+  border: 1px solid var(--line);
+  background: transparent;
+  border-radius: 8px;
+  padding: 8px 11px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 85px;
+    gap: 15px;
+  }
+
+  .hero h1 {
+    font-size: clamp(56px, 10vw, 88px);
+    letter-spacing: -4px;
+  }
+
+  .universe-art {
+    min-height: 390px;
+  }
+
+  .collection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .section-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .creator-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .nav-wrap {
+    padding: 12px 5%;
+  }
+
+  .brand {
+    font-size: 16px;
+  }
+
+  .brand-mark {
+    width: 32px;
+    height: 32px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 20px 5% 25px;
+    background: rgba(10, 8, 16, .97);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .05);
+  }
+
+  .nav-links .nav-cta {
+    margin-top: 12px;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid rgba(174, 139, 255, .35);
+  }
+
+  .hero {
+    padding: 75px 6% 60px;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 13vw, 72px);
+    letter-spacing: -3.5px;
+  }
+
+  .hero-copy {
+    font-size: 13px;
+  }
+
+  .hero-meta {
+    gap: 22px;
+    margin-top: 35px;
+  }
+
+  .universe-art {
+    min-height: 330px;
+    transform: scale(.9);
+    margin: -5px -15px;
+  }
+
+  .ring.r1, .ring.r2 {
+    width: 280px;
+    height: 125px;
+  }
+
+  .ring.r3 {
+    width: 220px;
+    height: 220px;
+  }
+
+  .core {
+    width: 145px;
+    height: 145px;
+  }
+
+  .core::after {
+    font-size: 75px;
+  }
+
+  .label-top {
+    right: 0;
+    top: 25px;
+  }
+
+  .label-bottom {
+    left: 0;
+    bottom: 25px;
+  }
+
+  .section {
+    padding: 78px 6%;
+  }
+
+  .section-heading {
+    margin-bottom: 28px;
+  }
+
+  .section-heading h2 {
+    letter-spacing: -1.5px;
+  }
+
+  .collection-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .collection-card {
+    min-height: 220px;
+  }
+
+  .feature-card {
+    padding: 28px 24px;
+    min-height: 360px;
+  }
+
+  .feature-card::after {
+    right: -250px;
+    opacity: .6;
+  }
+
+  .feature-content h3 {
+    font-size: 35px;
+  }
+
+  .manifesto {
+    padding: 75px 7%;
+  }
+
+  .manifesto h2 {
+    letter-spacing: -1.5px;
+  }
+
+  .creator-panel {
+    padding: 25px;
+  }
+
+  .footer-main, .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-links {
+    gap: 16px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <a class="logo" href="#">UNDEFINED<span>VERSE</span></a>
-    <nav aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#universe">Universe</a>
+
+<div class="ambient" aria-hidden="true">
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+</div>
+
+<canvas id="stars" aria-hidden="true"></canvas>
+
+<div class="nav-wrap">
+  <nav aria-label="Main navigation">
+    <a class="brand" href="#home" aria-label="UndefinedVerse home">
+      <span class="brand-mark"><span>∞</span></span>
+      <span>Undefined<em>Verse</em></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#universes">Universes</a>
+      <a href="#explore">Explore</a>
       <a href="#stories">Stories</a>
       <a href="#about">About</a>
-    </nav>
-  </header>  <main>
-    <section class="hero" id="home">
-      <div class="tag">An Original Fictional Universe</div>
-      <h1>Beyond the<br><span>Known Universe.</span></h1>
-      <p>
-        Every world has a beginning. Every character has a story.
-        Enter UndefinedVerse, an original universe built through imagination,
-        ambitious storytelling, and limitless possibilities.
+      <a class="nav-cta" href="#explore">Enter the Verse ↗</a>
+    </div>
+  </nav>
+</div>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="eyebrow">An original universe · Est. 2026</div>
+
+      <h1>
+        <span class="line">Beyond</span>
+        <span class="line gradient-text">the known.</span>
+      </h1>
+
+      <p class="hero-copy">
+        Not just stories. Entire realities waiting to be discovered.
+        Enter an original anime universe shaped by extraordinary
+        characters, impossible worlds, and ideas without boundaries.
       </p>
-      <a class="button" href="#universe">Explore the Universe →</a>
-    </section><section class="universe" id="universe">
-  <h2 class="section-heading">One Universe. Infinite Possibilities.</h2>
-  <p class="section-intro">
-    Discover the worlds, characters, and original stories that will shape
-    the future of UndefinedVerse.
-  </p>
-  <div class="cards">
-    <article class="card">
-      <div class="symbol">✦</div>
-      <h3>Original Anime</h3>
-      <p>Explore original anime concepts and the worlds behind every story.</p>
-    </article>
-    <article class="card">
-      <div class="symbol">⚔</div>
-      <h3>Characters</h3>
-      <p>Meet original heroes, rivals, and unforgettable characters.</p>
-    </article>
-    <article class="card">
-      <div class="symbol">◇</div>
-      <h3>Worlds & Lore</h3>
-      <p>Uncover mysteries, histories, powers, and connected worlds.</p>
-    </article>
+
+      <div class="hero-actions">
+        <a href="#universes" class="btn btn-primary">Explore the Universe <span>↗</span></a>
+        <a href="#about" class="btn btn-secondary">Discover Our Vision <span>→</span></a>
+      </div>
+
+      <div class="hero-meta">
+        <div class="meta-item">
+          <strong>∞</strong>
+          <span>Infinite possibilities</span>
+        </div>
+        <div class="meta-item">
+          <strong>01</strong>
+          <span>Original universe</span>
+        </div>
+        <div class="meta-item">
+          <strong>∞ × ∞</strong>
+          <span>Worlds to imagine</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="universe-art" aria-label="Abstract animated dimensional core">
+      <div class="ring r1"></div>
+      <div class="ring r2"></div>
+      <div class="ring r3"></div>
+      <div class="core"></div>
+
+      <div class="art-label label-top">
+        <small>Reality index</small>
+        <strong>UNDEFINED_001</strong>
+      </div>
+
+      <div class="art-label label-bottom">
+        <small>Dimensional status</small>
+        <strong>Beyond limits ↗</strong>
+      </div>
+
+      <div class="art-coordinate">00° ∞' — UNKNOWN SPACE</div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-label="Universe themes">
+    <div class="ticker-track">
+      <div class="ticker-content">
+        ORIGINAL WORLDS <span>✳</span> IMPOSSIBLE REALITIES <span>✳</span>
+        UNFORGETTABLE CHARACTERS <span>✳</span> STORIES WITHOUT LIMITS <span>✳</span>
+        ORIGINAL WORLDS <span>✳</span> IMPOSSIBLE REALITIES <span>✳</span>
+        UNFORGETTABLE CHARACTERS <span>✳</span> STORIES WITHOUT LIMITS <span>✳</span>
+      </div>
+      <div class="ticker-content" aria-hidden="true">
+        ORIGINAL WORLDS <span>✳</span> IMPOSSIBLE REALITIES <span>✳</span>
+        UNFORGETTABLE CHARACTERS <span>✳</span> STORIES WITHOUT LIMITS <span>✳</span>
+        ORIGINAL WORLDS <span>✳</span> IMPOSSIBLE REALITIES <span>✳</span>
+        UNFORGETTABLE CHARACTERS <span>✳</span> STORIES WITHOUT LIMITS <span>✳</span>
+      </div>
+    </div>
   </div>
-</section>
 
-<section id="stories">
-  <h2 class="section-heading">Stories in Development</h2>
-  <p class="section-intro">
-    Every legendary universe starts with a single idea. This is where
-    the first UndefinedVerse stories will be introduced.
-  </p>
-  <div class="notice">
-    <h3>The Beginning of Something New</h3>
-    <p style="color:#c7c7df; margin-top:8px;">
-      Original titles, manga, novels, and future anime projects will appear
-      here as they are developed and officially announced.
-    </p>
+  <section class="section" id="universes">
+    <div class="section-heading reveal">
+      <div>
+        <div class="section-kicker">01 / The universe</div>
+        <h2>Imagination has<br>no final form.</h2>
+      </div>
+      <p>
+        Every world begins with an idea. Every idea has the potential
+        to become something beyond the ordinary.
+      </p>
+    </div>
+
+    <article class="feature-card reveal">
+      <div class="feature-content">
+        <span class="pill">The Undefined philosophy</span>
+        <h3>Reality is only<br>the beginning.</h3>
+        <p>
+          Explore a growing original universe where every concept
+          opens the door to a new possibility. The rules are still
+          being written—and that's exactly the point.
+        </p>
+        <a class="btn btn-primary" href="#explore">Discover the possibilities ↗</a>
+      </div>
+    </article>
+  </section>
+
+  <section class="section" id="explore">
+    <div class="section-heading reveal">
+      <div>
+        <div class="section-kicker">02 / Explore</div>
+        <h2>Choose your<br>next reality.</h2>
+      </div>
+      <p>
+        Discover the foundations of UndefinedVerse: original anime
+        concepts, characters, worlds, and stories.
+      </p>
+    </div>
+
+    <div class="collection-grid">
+      <a class="collection-card reveal" href="#stories">
+        <div class="card-top">
+          <span class="card-index">COLLECTION / 001</span>
+          <div class="card-symbol">✧</div>
+        </div>
+        <div class="card-bottom">
+          <h3>Original Anime</h3>
+          <p>New concepts. Distinct identities. Worlds of our own.</p>
+          <span class="card-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="collection-card reveal" href="#stories">
+        <div class="card-top">
+          <span class="card-index">COLLECTION / 002</span>
+          <div class="card-symbol">◈</div>
+        </div>
+        <div class="card-bottom">
+          <h3>Characters</h3>
+          <p>Heroes, rivals, legends, and the forces that shape them.</p>
+          <span class="card-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="collection-card reveal" href="#stories">
+        <div class="card-top">
+          <span class="card-index">COLLECTION / 003</span>
+          <div class="card-symbol">◎</div>
+        </div>
+        <div class="card-bottom">
+          <h3>Worlds & Lore</h3>
+          <p>Ancient secrets, strange dimensions, and original mythology.</p>
+          <span class="card-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="collection-card reveal" href="#stories">
+        <div class="card-top">
+          <span class="card-index">COLLECTION / 004</span>
+          <div class="card-symbol">⌘</div>
+        </div>
+        <div class="card-bottom">
+          <h3>Stories</h3>
+          <p>Ideas taking shape, from the first spark to complete narratives.</p>
+          <span class="card-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="collection-card reveal" href="#stories">
+        <div class="card-top">
+          <span class="card-index">COLLECTION / 005</span>
+          <div class="card-symbol">⟡</div>
+        </div>
+        <div class="card-bottom">
+          <h3>Manga & Novels</h3>
+          <p>Original storytelling designed to grow beyond one medium.</p>
+          <span class="card-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="collection-card reveal" href="#about">
+        <div class="card-top">
+          <span class="card-index">COLLECTION / 006</span>
+          <div class="card-symbol">∞</div>
+        </div>
+        <div class="card-bottom">
+          <h3>The Unknown</h3>
+          <p>Unrevealed concepts and unexplored creative frontiers.</p>
+          <span class="card-arrow">↗</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="manifesto" id="stories">
+    <div class="reveal">
+      <span class="section-kicker">03 / The philosophy</span>
+      <h2>Made from imagination.<br>Built beyond <span>boundaries.</span></h2>
+      <p>
+        UndefinedVerse is an original creative universe in development.
+        Its stories, characters, and worlds begin with one belief:
+        creativity shouldn't have to fit inside a predefined box.
+      </p>
+      <a href="#about" class="btn btn-secondary" style="margin-top:26px">Our vision <span>→</span></a>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="creator-panel reveal">
+      <div>
+        <div class="section-kicker">04 / The vision</div>
+        <h3>A universe still becoming.</h3>
+        <p>
+          UndefinedVerse is an independent original anime-universe
+          project focused on imaginative storytelling, distinctive
+          characters, and interconnected fictional worlds.
+          The journey starts here—with ideas, ambition, and the freedom
+          to create something entirely our own.
+        </p>
+        <a href="#home" class="text-link" style="margin-top:22px">Return to the beginning ↑</a>
+      </div>
+
+      <div class="creator-side">
+        <div>
+          <strong>UNDEFINEDVERSE</strong>
+          <span>Beyond the known · Into the undefined</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-main">
+    <div>
+      <a class="brand" href="#home">
+        <span class="brand-mark"><span>∞</span></span>
+        <span>Undefined<em>Verse</em></span>
+      </a>
+      <p class="footer-note" style="margin-top:13px">
+        An original universe. Infinite possibilities.
+        A creative world built one idea at a time.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#universes">Universe</a>
+      <a href="#explore">Explore</a>
+      <a href="#stories">Stories</a>
+      <a href="#about">About</a>
+    </div>
   </div>
-</section>
 
-<section class="universe" id="about">
-  <h2 class="section-heading">About UndefinedVerse</h2>
-  <p class="section-intro">
-    UndefinedVerse is an independent creative project focused on building
-    an original fictional universe through imaginative worlds, distinct
-    characters, and interconnected storytelling.
-  </p>
-  <p style="color:#aaaac7;">
-    This is the beginning. The universe is yours to create.
-  </p>
-</section>
+  <div class="footer-bottom">
+    <span>© <span id="year">2026</span> UndefinedVerse. All rights reserved.</span>
+    <span>CREATED BEYOND THE KNOWN ◈</span>
+  </div>
+</footer>
 
-  </main>  <footer>
-    <p>© 2026 UndefinedVerse. Original universe in development.</p>
-    <p>All original characters, stories, and worlds remain the creator's work.</p>
-  </footer>
+<script>
+/* Subtle procedural starfield: no image files required. */
+(() => {
+  const canvas = document.getElementById('stars');
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  let width = 0;
+  let height = 0;
+  let stars = [];
+  let dpr = 1;
+
+  function resize() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    const count = Math.min(150, Math.floor(width * height / 9000));
+    stars = Array.from({ length: count }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      radius: Math.random() * 1.1 + .2,
+      alpha: Math.random() * .55 + .15,
+      speed: Math.random() * .15 + .025,
+      phase: Math.random() * Math.PI * 2
+    }));
+  }
+
+  let frame = 0;
+
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+    frame += .01;
+
+    for (const star of stars) {
+      const shimmer = .72 + Math.sin(frame + star.phase) * .28;
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(210, 194, 255, ${star.alpha * shimmer})`;
+      ctx.fill();
+
+      star.y -= star.speed;
+      if (star.y < -2) {
+        star.y = height + 2;
+        star.x = Math.random() * width;
+      }
+    }
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      requestAnimationFrame(draw);
+    }
+  }
+
+  resize();
+  draw();
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(resize, 150);
+  });
+})();
+
+/* Mobile navigation */
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+  menuToggle.textContent = isOpen ? '✕' : '☰';
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.textContent = '☰';
+  });
+});
+
+/* Reveal sections as they enter the viewport */
+const revealElements = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: .12 });
+
+  revealElements.forEach(element => observer.observe(element));
+} else {
+  revealElements.forEach(element => element.classList.add('visible'));
+}
+
+/* Current year */
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
-  </html>
+</html>
