@@ -1755,5 +1755,32 @@ document.getElementById('year').textContent = new Date().getFullYear();
 })();
 </script>
 
+<!-- UndefinedVerse Profile Panel --><div id="uv-profile-panel" style="display:none; position:fixed; inset:0; z-index:99999; background:rgba(5,4,10,.94); align-items:center; justify-content:center; padding:20px;">
+  <div style="width:100%; max-width:420px; padding:28px; border:1px solid #8b5cf6; border-radius:18px; background:#100d1c; color:#fff; font-family:Arial,sans-serif; box-sizing:border-box;">
+    <h2 style="color:#c4b5fd; margin-top:0;">YOUR UNIVERSE</h2>
+    <p style="color:#b8b0ca;">Manage your UndefinedVerse profile.</p><label for="uv-profile-username">Username</label>
+<input id="uv-profile-username" type="text" maxlength="30" placeholder="Choose a username"
+  style="display:block; width:100%; box-sizing:border-box; margin:8px 0 18px; padding:12px; border-radius:8px; border:1px solid #51436d; background:#191428; color:white;">
+
+<label for="uv-profile-displayname">Display name</label>
+<input id="uv-profile-displayname" type="text" maxlength="60" placeholder="Your display name"
+  style="display:block; width:100%; box-sizing:border-box; margin:8px 0 18px; padding:12px; border-radius:8px; border:1px solid #51436d; background:#191428; color:white;">
+
+<button id="uv-profile-save" type="button"
+  style="width:100%; padding:13px; border:0; border-radius:8px; background:#8b5cf6; color:white; font-weight:bold;">
+  SAVE PROFILE
+</button>
+
+<p id="uv-profile-message" role="status" style="font-size:14px; overflow-wrap:anywhere;"></p>
+
+<button id="uv-profile-close" type="button"
+  style="padding:10px; border:1px solid #51436d; border-radius:8px; background:transparent; color:white;">
+  CLOSE
+</button>
+
+  </div>
+</div>
+<!-- End UndefinedVerse Profile Panel -->
+
 </body>
 </html>
