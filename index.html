@@ -1876,11 +1876,21 @@ window.openUVProfile = openUVProfile;
 
 <!-- UndefinedVerse Profile Button -->
 <button
+  id="uv-open-profile"
   type="button"
-  onclick="window.openUVProfile && window.openUVProfile()"
   style="position:fixed; bottom:20px; right:20px; z-index:9998; padding:12px 18px; border:1px solid #8b5cf6; border-radius:12px; background:#100d1c; color:#c4b5fd; font-weight:bold; cursor:pointer;">
   👤 MY PROFILE
 </button>
+
+<script>
+document.getElementById("uv-open-profile").addEventListener("click", function () {
+  if (typeof window.openUVProfile === "function") {
+    window.openUVProfile();
+  } else {
+    alert("Profile system could not load. Please refresh the page.");
+  }
+});
+</script>
 <!-- End UndefinedVerse Profile Button -->
 
 </body>
