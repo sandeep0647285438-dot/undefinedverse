@@ -1751,6 +1751,98 @@ document.getElementById('year').textContent = new Date().getFullYear();
     }
   });
 
+// UndefinedVerse profile system
+const profilePanel = document.getElementById("uv-profile-panel");
+const profileUsername = document.getElementById("uv-profile-username");
+const profileDisplayName = document.getElementById("uv-profile-displayname");
+const profileSave = document.getElementById("uv-profile-save");
+const profileMessage = document.getElementById("uv-profile-message");
+const profileClose = document.getElementById("uv-profile-close");
+
+async function openUVProfile() {
+const { data: { user }, error: userError } = await client.auth.getUser();
+
+if (userError || !user) {
+  showMessage("Please log in first to open your profile.");
+  overlay.style.display = "flex";
+  return;
+}
+
+profileMessage.textContent = "Loading your profile...";
+profilePanel.style.display = "flex";
+
+const { data, error } = await client
+  .from("profiles")
+  .select("username, display_name")
+  .eq("id", user.id)
+  .maybeSingle();
+
+if (error) {
+  profileMessage.textContent = "Couldn't load profile: " + error.message;
+  return;
+}
+
+profileUsername.value = data?.username || "";
+profileDisplayName.value = data?.display_name || "";
+profileMessage.textContent = "Profile loaded.";
+
+}
+
+profileSave.addEventListener("click", async () => {
+const { data: { user }, error: userError } = await client.auth.getUser();
+
+if (userError || !user) {
+  profileMessage.textContent = "Please log in first.";
+  return;
+}
+
+const username = profileUsername.value.trim();
+const displayName = profileDisplayName.value.trim();
+
+if (!/^[a-zA-Z0-9_]{3,30}$/.test(username)) {
+  profileMessage.textContent =
+    "Username must be 3–30 characters: letters, numbers, or underscores.";
+  return;
+}
+
+if (!displayName || displayName.length > 60) {
+  profileMessage.textContent =
+    "Display name must be between 1 and 60 characters.";
+  return;
+}
+
+profileSave.disabled = true;
+profileMessage.textContent = "Saving profile...";
+
+try {
+  const { error } = await client
+    .from("profiles")
+    .upsert({
+      id: user.id,
+      username,
+      display_name: displayName,
+      updated_at: new Date().toISOString()
+    });
+
+  if (error) throw error;
+
+  profileMessage.textContent = "Profile saved successfully! 💜";
+} catch (error) {
+  profileMessage.textContent =
+    "Couldn't save profile: " + error.message;
+} finally {
+  profileSave.disabled = false;
+}
+
+});
+
+profileClose.addEventListener("click", () => {
+profilePanel.style.display = "none";
+});
+
+// Allow other website buttons to open the profile panel.
+window.openUVProfile = openUVProfile;
+
   setMode("login");
 })();
 </script>
