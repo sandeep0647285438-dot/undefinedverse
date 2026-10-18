@@ -1657,5 +1657,103 @@ document.getElementById('year').textContent = new Date().getFullYear();
 }
 </style>
 
+<script>
+(() => {
+  const SUPABASE_URL = "https://plinoicuiojphupiwpal.supabase.co";
+
+  const SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_ZAMmblHqY9j7VBTZx3E9Wg_c0FIy7tj";
+
+  const client = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+  );
+
+  const overlay = document.getElementById("uv-auth-overlay");
+  const form = document.getElementById("uv-auth-form");
+  const title = document.getElementById("uv-auth-title");
+  const subtitle = document.getElementById("uv-auth-subtitle");
+  const email = document.getElementById("uv-auth-email");
+  const password = document.getElementById("uv-auth-password");
+  const submit = document.getElementById("uv-auth-submit");
+  const switchButton = document.getElementById("uv-auth-switch");
+  const closeButton = document.getElementById("uv-auth-close");
+  const message = document.getElementById("uv-auth-message");
+
+  let mode = "login";
+
+  function showMessage(text) {
+    message.textContent = text;
+  }
+
+  function setMode(newMode) {
+    mode = newMode;
+    title.textContent =
+      mode === "signup" ? "CREATE YOUR UNIVERSE" : "ENTER THE VERSE";
+    subtitle.textContent =
+      mode === "signup"
+        ? "Join the UndefinedVerse."
+        : "Your universe awaits.";
+    submit.textContent =
+      mode === "signup" ? "CREATE ACCOUNT" : "LOG IN";
+    password.autocomplete =
+      mode === "signup" ? "new-password" : "current-password";
+    switchButton.textContent =
+      mode === "signup"
+        ? "Already have an account? Log in"
+        : "New to UndefinedVerse? Create an account";
+    showMessage("");
+  }
+
+  switchButton.addEventListener("click", () => {
+    setMode(mode === "login" ? "signup" : "login");
+  });
+
+  closeButton.addEventListener("click", () => {
+    overlay.style.display = "none";
+  });
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    submit.disabled = true;
+    showMessage("Connecting to UndefinedVerse...");
+
+    try {
+      let result;
+
+      if (mode === "signup") {
+        result = await client.auth.signUp({
+          email: email.value.trim(),
+          password: password.value
+        });
+      } else {
+        result = await client.auth.signInWithPassword({
+          email: email.value.trim(),
+          password: password.value
+        });
+      }
+
+      if (result.error) throw result.error;
+
+      if (mode === "signup") {
+        showMessage(
+          result.data.session
+            ? "Account created! You're signed in."
+            : "Account created! Check your email to confirm your account."
+        );
+      } else {
+        showMessage("Welcome back to UndefinedVerse!");
+      }
+    } catch (error) {
+      showMessage(error.message || "Something went wrong. Please try again.");
+    } finally {
+      submit.disabled = false;
+    }
+  });
+
+  setMode("login");
+})();
+</script>
+
 </body>
 </html>
