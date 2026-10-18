@@ -1751,6 +1751,8 @@ document.getElementById('year').textContent = new Date().getFullYear();
     }
   });
 
+document.addEventListener("DOMContentLoaded", () => {
+
 // UndefinedVerse profile system
 const profilePanel = document.getElementById("uv-profile-panel");
 const profileUsername = document.getElementById("uv-profile-username");
@@ -1843,6 +1845,7 @@ profilePanel.style.display = "none";
 // Allow other website buttons to open the profile panel.
 window.openUVProfile = openUVProfile;
 
+});
   setMode("login");
 })();
 </script>
