@@ -1896,5 +1896,150 @@ document.getElementById("uv-open-profile").addEventListener("click", function ()
 </script>
 <!-- End UndefinedVerse Profile Button -->
 
+<style>
+/* UNDEFINEDVERSE — PREMIUM COSMIC POPUPS */
+
+#uv-auth-overlay,
+#uv-profile-panel {
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  background:
+    radial-gradient(ellipse at top, rgba(124,58,237,.20), transparent 60%),
+    rgba(4,3,12,.94) !important;
+  padding: 18px !important;
+  box-sizing: border-box !important;
+}
+
+/* Profile card */
+#uv-profile-panel > div {
+  position: relative !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  max-width: 420px !important;
+  padding: 30px 24px !important;
+  border: 1px solid rgba(167,139,250,.55) !important;
+  border-radius: 24px !important;
+  background:
+    radial-gradient(ellipse at top right, rgba(139,92,246,.19), transparent 55%),
+    linear-gradient(145deg,#171126,#090711 75%) !important;
+  box-shadow:
+    0 0 35px rgba(124,58,237,.20),
+    inset 0 1px rgba(255,255,255,.07) !important;
+  animation: uvPopupAppear .35s ease-out both;
+}
+
+/* Headings */
+#uv-profile-panel h2 {
+  font-size: 25px !important;
+  letter-spacing: 2px !important;
+  text-align: center !important;
+  background: linear-gradient(90deg,#ddd6fe,#a78bfa,#f0abfc);
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+#uv-profile-panel p {
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Labels */
+#uv-profile-panel label {
+  display: block !important;
+  margin: 18px 0 8px !important;
+  color: #d8ccff !important;
+  font-size: 13px !important;
+  letter-spacing: .5px !important;
+}
+
+/* Input fields */
+#uv-profile-panel input,
+#uv-auth-overlay input {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-height: 46px !important;
+  padding: 13px 14px !important;
+  border: 1px solid rgba(167,139,250,.30) !important;
+  border-radius: 12px !important;
+  outline: none !important;
+  background: rgba(9,7,20,.88) !important;
+  color: #fff !important;
+  font-size: 15px !important;
+  transition: border-color .2s, box-shadow .2s !important;
+}
+
+#uv-profile-panel input:focus,
+#uv-auth-overlay input:focus {
+  border-color: #a78bfa !important;
+  box-shadow: 0 0 0 3px rgba(139,92,246,.15) !important;
+}
+
+#uv-profile-panel input::placeholder,
+#uv-auth-overlay input::placeholder {
+  color: #8e849f !important;
+}
+
+/* Popup buttons */
+#uv-profile-panel button,
+#uv-auth-overlay button {
+  border-radius: 12px !important;
+  transition: transform .2s, box-shadow .2s, filter .2s !important;
+}
+
+#uv-profile-panel button:hover,
+#uv-auth-overlay button:hover {
+  filter: brightness(1.15) !important;
+  box-shadow: 0 0 20px rgba(139,92,246,.24) !important;
+}
+
+#uv-profile-save {
+  width: 100% !important;
+  min-height: 48px !important;
+  margin-top: 22px !important;
+  border: none !important;
+  background: linear-gradient(100deg,#7c3aed,#a855f7,#7c3aed) !important;
+  color: white !important;
+  font-weight: 800 !important;
+  letter-spacing: 1px !important;
+  box-shadow: 0 6px 22px rgba(124,58,237,.24) !important;
+}
+
+#uv-profile-close {
+  width: 100% !important;
+  min-height: 42px !important;
+  margin-top: 8px !important;
+  border: 1px solid rgba(167,139,250,.25) !important;
+  background: rgba(255,255,255,.035) !important;
+  color: #c4b5fd !important;
+}
+
+/* Smooth entrance */
+@keyframes uvPopupAppear {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Phone-friendly layout */
+@media (max-width: 480px) {
+  #uv-profile-panel > div {
+    padding: 25px 19px !important;
+    border-radius: 20px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #uv-profile-panel > div {
+    animation: none !important;
+  }
+}
+</style>
+
 </body>
 </html>
